@@ -1,0 +1,46 @@
+{
+	"name": "AzureSqlTable1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase_workshopDB",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "col1",
+				"type": "varchar"
+			},
+			{
+				"name": "col2",
+				"type": "varchar"
+			},
+			{
+				"name": "col3",
+				"type": "varchar"
+			},
+			{
+				"name": "col4",
+				"type": "varchar"
+			},
+			{
+				"name": "col5",
+				"type": "varchar"
+			},
+			{
+				"name": "col6",
+				"type": "varchar"
+			},
+			{
+				"name": "col7",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "dita"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

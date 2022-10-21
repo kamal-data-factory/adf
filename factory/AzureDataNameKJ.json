@@ -1,0 +1,9 @@
+{
+	"name": "AzureDataNameKJ",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "b424557e-6d4d-487e-8944-c00f6bf81604",
+		"tenantId": "942ba535-a606-4a5d-bdff-4a5660447001"
+	}
+}
