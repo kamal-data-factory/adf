@@ -1,0 +1,33 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "AzureDataNameKJ"
+		},
+		"AzureSqlDatabase_workshopDB_connectionString": {
+			"value": ""
+		},
+		"FileServer1_password": {
+			"value": ""
+		},
+		"adfworkshopkj_ADLS_accountKey": {
+			"value": ""
+		},
+		"FileServer1_properties_typeProperties_host": {
+			"value": "\\\\DESKTOP-GU7O03E\\DataFactory_Udemy"
+		},
+		"FileServer1_properties_typeProperties_userId": {
+			"value": "Kamal"
+		},
+		"adfworkshopkj_ADLS_properties_typeProperties_url": {
+			"value": "https://adfworkshopkj.dfs.core.windows.net/"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}
