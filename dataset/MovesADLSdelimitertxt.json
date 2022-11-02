@@ -1,0 +1,20 @@
+{
+	"name": "MovesADLSdelimitertxt",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "adfworkshopkj_ADLS",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}
