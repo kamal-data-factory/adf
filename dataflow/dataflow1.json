@@ -28,6 +28,9 @@
 				},
 				{
 					"name": "AggregateRatings"
+				},
+				{
+					"name": "UpsertIftrue"
 				}
 			],
 			"scriptLines": [
@@ -60,7 +63,10 @@
 				"RankMoviesByRatings aggregate(groupBy(PrimaryGenre,",
 				"          year),",
 				"     AverageRating = avg(toInteger({Rotten tomato})),",
-				"          HighestRated = ERROR_FUNCTION('')) ~> AggregateRatings"
+				"          HighestRated = first(title),",
+				"          LowestRated = last(title),",
+				"          NumberOfMovies = count()) ~> AggregateRatings",
+				"AggregateRatings alterRow(upsertIf(true())) ~> UpsertIftrue"
 			]
 		}
 	}
