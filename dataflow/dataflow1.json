@@ -25,6 +25,9 @@
 				},
 				{
 					"name": "RankMoviesByRatings"
+				},
+				{
+					"name": "AggregateRatings"
 				}
 			],
 			"scriptLines": [
@@ -53,7 +56,11 @@
 				"DerivedPrimaryGenre window(over(PrimaryGenre,",
 				"          year),",
 				"     desc({Rotten tomato}, true),",
-				"     RatingsRank = rank()) ~> RankMoviesByRatings"
+				"     RatingsRank = rank()) ~> RankMoviesByRatings",
+				"RankMoviesByRatings aggregate(groupBy(PrimaryGenre,",
+				"          year),",
+				"     AverageRating = avg(toInteger({Rotten tomato})),",
+				"          HighestRated = ERROR_FUNCTION('')) ~> AggregateRatings"
 			]
 		}
 	}
