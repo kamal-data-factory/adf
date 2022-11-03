@@ -5,6 +5,9 @@
 		"factoryName": {
 			"value": "AzureDataNameKJ"
 		},
+		"AzureDatabricks1_accessToken": {
+			"value": ""
+		},
 		"AzureSqlDatabase_workshopDB_connectionString": {
 			"value": ""
 		},

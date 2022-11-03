@@ -7,6 +7,10 @@
 			"metadata": "Data Factory name",
 			"defaultValue": "AzureDataNameKJ"
 		},
+		"AzureDatabricks1_accessToken": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accessToken' of 'AzureDatabricks1'"
+		},
 		"AzureSqlDatabase_workshopDB_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'AzureSqlDatabase_workshopDB'"
@@ -57,6 +61,9 @@
 				"parameters": {
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
+					},
+					"AzureDatabricks1_accessToken": {
+						"value": "[parameters('AzureDatabricks1_accessToken')]"
 					},
 					"AzureSqlDatabase_workshopDB_connectionString": {
 						"value": "[parameters('AzureSqlDatabase_workshopDB_connectionString')]"
