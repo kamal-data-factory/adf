@@ -12,7 +12,15 @@
 					"name": "Source1"
 				}
 			],
-			"sinks": [],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "AzureSqlTable2",
+						"type": "DatasetReference"
+					},
+					"name": "sink1"
+				}
+			],
 			"transformations": [
 				{
 					"name": "select1"
@@ -66,7 +74,18 @@
 				"          HighestRated = first(title),",
 				"          LowestRated = last(title),",
 				"          NumberOfMovies = count()) ~> AggregateRatings",
-				"AggregateRatings alterRow(upsertIf(true())) ~> UpsertIftrue"
+				"AggregateRatings alterRow(upsertIf(true())) ~> UpsertIftrue",
+				"UpsertIftrue sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     deletable:false,",
+				"     insertable:false,",
+				"     updateable:false,",
+				"     upsertable:true,",
+				"     keys:['PrimaryGenre','year'],",
+				"     format: 'table',",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true,",
+				"     errorHandlingOption: 'stopOnFirstError') ~> sink1"
 			]
 		}
 	}
